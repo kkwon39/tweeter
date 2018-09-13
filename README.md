@@ -27,4 +27,3 @@ Tweeter is a simple, single-page Twitter clone. Tweeter was designed and develop
 ![hiding-textarea](https://github.com/kkwon39/tweeter/blob/master/docs/Hide%20Compose.png)
 ![error1](https://github.com/kkwon39/tweeter/blob/master/docs/Empty%20Error.png)
 ![error2](https://github.com/kkwon39/tweeter/blob/master/docs/Too%20long%20Error.png)
-![tweets](https://github.com/kkwon39/tweeter/blob/master/docs/Screen%20Shot%202018-09-13%20at%204.18.15%20PM.png)
