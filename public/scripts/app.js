@@ -10,6 +10,7 @@ function createTweetElement(tweetData) {
     const header = `<header class="article-tweet-header">
                   <img class="profile-pic" src="${escape(tweetData.user.avatars.small)}">
                   <h2 class="article-header-text">${escape(tweetData.user.name)}</h2>
+                  <span class="user-handle">${tweetData.user.handle}</span>
                   </header>`
     const body = `<p class="article-content-text">${escape(tweetData.content.text)}</p>`
     const footer = `<footer>
@@ -35,13 +36,12 @@ function renderTweets(tweetArray) {
 function tweetSubmit() {
     $error = $('.error-box');
     $("form").on("submit", function(event) {
-      event.preventDefault();
-      let $messagelength = $(this).find("textarea").val().length
-        if ($messagelength < 1) {
+        event.preventDefault();
+        let $messagelength = $(this).find("textarea").val().length
+        if (!$messagelength) {
             $error.text("Text input can't be empty.")
             $error.show();
-        }
-        else if ($messagelength > 140) {
+        } else if ($messagelength > 140) {
             $error.text("Text input can't be longer then 140 characters.")
             $error.show();
         } else {
@@ -56,6 +56,7 @@ function tweetSubmit() {
 };
 
 function loadTweets() {
+    $(".posted-tweets").empty()
     $.ajax('/tweets', { method: 'GET' }).then(function(data) {
         console.log("retrieved data from Tweets", data);
         renderTweets(data);
