@@ -1,3 +1,4 @@
+//This js file changes number and font color of counter element depending on number of text typed in input field.
 $(document).ready(function() {
     $(".txt").on("input", function(event) {
         let count = 140 - this.value.length

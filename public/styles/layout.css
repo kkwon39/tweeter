@@ -1,11 +1,148 @@
+@charset "UTF-8";
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+.nav-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  color: #e8fdff;
+  background-color: #00a087;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-family: "Roboto Condensed", sans-serif;
+  z-index: 1;
+}
+.nav-bar .header {
+  float: left;
+  margin-left: 0px;
+  font-size: 200%;
+  line-height: 80px;
+}
+.nav-bar .logo {
+  float: left;
+  width: 80px;
+  height: 80px;
+}
+.nav-bar .compose-button {
+  border-radius: 5px;
+  width: 120px;
+  height: 60px;
+  float: right;
+  margin-top: 10px;
+  opacity: 0.5;
+  color: green;
+}
+.nav-bar .compose-button:hover {
+  opacity: 1;
+  color: black;
+}
+
+.new-tweet {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-left: 2em;
+  margin-right: 2em;
+}
+.new-tweet h2 {
+  margin-top: 5px;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.new-tweet textarea {
+  width: 100%;
+}
+.new-tweet .counter {
+  margin-top: 5px;
+  float: right;
+}
+
+.error-box {
+  color: red;
+  width: 100px;
+  display: none;
+}
+
+.article-tweet:hover .icons {
+  opacity: 1;
+}
+
+.icons {
+  margin: 0px;
+  margin-top: 5px;
+  opacity: 0;
+  float: right;
+  padding-right: 15px;
+}
+
+.user-handle {
+  display: inline;
+}
+
+.article-tweet {
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin: 2em;
+  opacity: 0.5;
+}
+.article-tweet:hover {
+  border: 1px solid black;
+  opacity: 1;
+}
+.article-tweet .article-tweet-header {
+  background-color: grey;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 10px;
+  margin: 0px;
+}
+.article-tweet .profile-pic {
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+  margin-right: 10px;
+  margin-top: 5px;
+  float: left;
+}
+.article-tweet .article-header-text {
+  padding: 0px;
+  line-height: 45px;
+  margin: 0px;
+  margin-right: 0px;
+  width: 250px;
+  display: inline;
+}
+.article-tweet .article-content-text {
+  margin-left: 15px;
+  margin-right: 15px;
+  word-wrap: break-word;
+}
+.article-tweet footer {
+  height: 30px;
+  border-top: 1px solid grey;
+}
+.article-tweet .article-tweet-footer {
+  margin: 0px;
+  padding-left: 15px;
+  padding-top: 10px;
+  font-size: 0.7em;
+  float: left;
+}
+.article-tweet .user-handle {
+  float: right;
+  margin-top: 10px;
+  margin-right: 15px;
+  display: inline;
+}
+
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,9 +150,8 @@ html {
 /*
  * Global layout stuff
  */
-
-.container{
-  width:450px;
+.container {
+  width: 450px;
   background-color: white;
   margin: 0 auto;
   padding-top: 140px;
@@ -26,9 +162,11 @@ body {
   margin: 0;
   color: #244751;
   background-color: #eee;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+/*# sourceMappingURL=layout.css.map */

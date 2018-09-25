@@ -11,7 +11,6 @@ module.exports = function makeDataHelpers(db) {
             db.collection("tweets").insertOne(newTweet);
             callback(null, true);
         },
-
         // Get all tweets in `db`, sorted by newest first
         getTweets: function(callback) {
             db.collection("tweets").find().toArray((err, tweets) => {

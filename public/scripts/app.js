@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+//Creates Tweet Element and appends HTML strings into it.
 function createTweetElement(tweetData) {
     const $tweet = $('<article>').addClass('article-tweet')
     const time = new Date(tweetData.created_at).toLocaleTimeString();
@@ -27,12 +29,15 @@ function createTweetElement(tweetData) {
     return $tweet;
 }
 
+//Loops through tweet Array and prepends each tweet elements to tweets container element.
 function renderTweets(tweetArray) {
     tweetArray.forEach(function(tweet) {
         $("#tweets-container").prepend(createTweetElement(tweet));
     });
 }
 
+//Determines whether input text for new tweets are valid inputs, if they are valid,
+//makes post request.
 function tweetSubmit() {
     $error = $('.error-box');
     $("form").on("submit", function(event) {
@@ -55,6 +60,7 @@ function tweetSubmit() {
     })
 };
 
+//Loads all postest tweets in the database.
 function loadTweets() {
     $(".posted-tweets").empty()
     $.ajax('/tweets', { method: 'GET' }).then(function(data) {
@@ -63,6 +69,7 @@ function loadTweets() {
     })
 };
 
+//For the Slide-Toggle function for compose button.
 function newToggleCompose() {
     $(".compose-button").click(function() {
         $(".new-tweet").slideToggle();
@@ -70,12 +77,14 @@ function newToggleCompose() {
     });
 }
 
+//This function ensures HTML security by casting strings with escape() function.
 function escape(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
 }
 
+//loads each functions when the page is done loading.
 $(document).ready(function() {
     tweetSubmit();
     loadTweets();
