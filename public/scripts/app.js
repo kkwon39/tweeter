@@ -7,7 +7,7 @@
 
 //Creates Tweet Element and appends HTML strings into it.
 function createTweetElement(tweetData) {
-    const $tweet = $('<article>').addClass('article-tweet')
+    const $tweet = $('<article>').addClass('article-tweet');
     const time = new Date(tweetData.created_at).toLocaleTimeString();
     const header = `<header class="article-tweet-header">
                   <img class="profile-pic" src="${escape(tweetData.user.avatars.small)}">
